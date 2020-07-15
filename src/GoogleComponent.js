@@ -115,7 +115,7 @@ export class GoogleComponent extends Component {
   getLocationByCoordinates(coordinates) {
     if (this.props.apiKey) {
       const address = `${coordinates.lat},${coordinates.lng}`
-      let _fire = fetch(this.state.proxyUrl + 'https://maps.googleapis.com/maps/api/geocode/json?latlng=' + address + '&key=' + this.props.apiKey
+      let _fire = fetch(this.state.proxyUrl + 'https://maps.googleapis.com/maps/api/place/textsearch/json?query=' + address + '&key=' + this.props.apiKey
       )
       return _fire.then((resp) => {
         return resp.json().then((res) => {
